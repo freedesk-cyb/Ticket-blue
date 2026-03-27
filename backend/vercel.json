@@ -2,24 +2,8 @@
   "version": 2,
   "rewrites": [
     {
-      "source": "/api/(.*)",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/auth/(.*)",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/tickets/(.*)",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/users/(.*)",
-      "destination": "/api/index.ts"
-    },
-    {
-      "source": "/chat/(.*)",
-      "destination": "/api/index.ts"
+      "source": "/(.*)",
+      "destination": "/api/index.js"
     }
   ]
 }
