@@ -20,7 +20,12 @@ import { Message } from './chat/message.entity';
             url: process.env.POSTGRES_URL,
             entities: [User, Ticket, Message],
             synchronize: true, // Auto-create tables (only for simple apps/prototypes)
-            ssl: { rejectUnauthorized: false }, // Required for Vercel/Neon Postgres
+            ssl: true,
+            extra: {
+              ssl: {
+                rejectUnauthorized: false,
+              },
+            },
           };
         }
         return {
