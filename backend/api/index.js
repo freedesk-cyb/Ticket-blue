@@ -1,8 +1,4 @@
-const express = require('express');
-const app = express();
-
-app.get('*', (req, res) => {
-  res.status(200).send('Plain Express responding!');
-});
-
-module.exports = app;
+module.exports = (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Pure Node.js HTTP responding - No dependencies needed!');
+};
