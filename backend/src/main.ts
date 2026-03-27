@@ -6,4 +6,19 @@ async function bootstrap() {
   app.enableCors();
   await app.listen(process.env.PORT || 3001);
 }
-bootstrap();
+
+if (!process.env.VERCEL) {
+  bootstrap();
+}
+
+let cachedServer: any;
+
+export default async function (req: any, res: any) {
+  if (!cachedServer) {
+    const app = await NestFactory.create(AppModule);
+    app.enableCors();
+    await app.init();
+    cachedServer = app.getHttpAdapter().getInstance();
+  }
+  return cachedServer(req, res);
+}
