@@ -12,6 +12,7 @@ import { Message } from './chat/message.entity';
 
 @Module({
   imports: [
+    /*
     TypeOrmModule.forRootAsync({
       useFactory: () => {
         if (process.env.POSTGRES_URL) {
@@ -39,10 +40,13 @@ import { Message } from './chat/message.entity';
         };
       },
     }),
+    */
+    /*
     TicketModule,
     AuthModule,
     UsersModule,
     ChatModule,
+    */
   ],
   controllers: [AppController],
   providers: [AppService],
