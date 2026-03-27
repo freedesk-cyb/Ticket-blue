@@ -14,7 +14,6 @@ import { Message } from './chat/message.entity';
   imports: [
     TypeOrmModule.forRootAsync({
       useFactory: () => {
-        /*
         if (process.env.POSTGRES_URL) {
           return {
             type: 'postgres',
@@ -23,10 +22,10 @@ import { Message } from './chat/message.entity';
             synchronize: true, // Auto-create tables (only for simple apps/prototypes)
             ssl: { rejectUnauthorized: false }, // Required for Vercel/Neon Postgres
           };
-        } */
+        }
         return {
           type: 'sqlite',
-          database: ':memory:',
+          database: 'db.sqlite',
           entities: [User, Ticket, Message],
           synchronize: true,
         };
