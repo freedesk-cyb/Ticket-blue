@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, ManyToOne } from 'typeorm';
 import { Ticket } from '../tickets/ticket.entity';
 
-@Entity()
+@Entity('messages')
 export class Message {
   @PrimaryGeneratedColumn()
   id: number;

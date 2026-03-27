@@ -7,7 +7,7 @@ export enum UserRole {
   HELPDESK = 'helpdesk', // Mesa de Ayuda
 }
 
-@Entity()
+@Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;

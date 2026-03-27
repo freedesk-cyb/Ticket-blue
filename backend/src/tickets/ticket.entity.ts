@@ -20,7 +20,7 @@ export enum TicketDepartment {
   HELPDESK = 'Mesa de Ayuda',
 }
 
-@Entity()
+@Entity('tickets')
 export class Ticket {
   @PrimaryGeneratedColumn()
   id: number;
