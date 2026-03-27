@@ -1,16 +1,25 @@
 {
   "version": 2,
-  "functions": {
-    "api/index.ts": {
-      "runtime": "@vercel/node",
-      "memory": 1024,
-      "maxDuration": 10
-    }
-  },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "api/index.ts"
+      "source": "/api/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/auth/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/tickets/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/users/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/chat/(.*)",
+      "destination": "/api/index.ts"
     }
   ]
 }
