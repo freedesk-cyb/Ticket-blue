@@ -1,3 +1,4 @@
+require('reflect-metadata');
 const { NestFactory } = require('@nestjs/core');
 const { AppModule } = require('../dist/app.module');
 
@@ -9,9 +10,7 @@ module.exports = async (req, res) => {
   if (!cachedServer) {
     try {
       console.log('Starting NestJS bootstrap...');
-      const app = await NestFactory.create(AppModule, {
-        logger: ['error', 'warn', 'log', 'debug'], // Detailed logs in Vercel
-      });
+      const app = await NestFactory.create(AppModule);
       app.enableCors();
       console.log('Initializing app...');
       await app.init();
