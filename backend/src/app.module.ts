@@ -19,7 +19,7 @@ import { Message } from './chat/message.entity';
             type: 'postgres',
             url: process.env.POSTGRES_URL,
             entities: [User, Ticket, Message],
-            synchronize: false, // Disable auto-sync to avoid hangs
+            synchronize: true, // Enable once to create tables
             ssl: true,
             extra: {
               ssl: {
