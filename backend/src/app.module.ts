@@ -19,12 +19,15 @@ import { Message } from './chat/message.entity';
             type: 'postgres',
             url: process.env.POSTGRES_URL,
             entities: [User, Ticket, Message],
-            synchronize: true, // Auto-create tables (only for simple apps/prototypes)
+            synchronize: false, // Disable auto-sync to avoid hangs
             ssl: true,
             extra: {
               ssl: {
                 rejectUnauthorized: false,
               },
+              connectionTimeoutMillis: 5000,
+              query_timeout: 5000,
+              statement_timeout: 5000,
             },
           };
         }
